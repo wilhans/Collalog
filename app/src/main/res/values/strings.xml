@@ -9,4 +9,6 @@
     <string name="login_button">Login</string>
     <string name="add_report_button">Add Report</string>
     <string name="group_members_button">Group Members</string>
+    <string name="default_slider">0/5</string>
+    <string name="submit_button">Submit</string>
 </resources>
