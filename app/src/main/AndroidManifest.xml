@@ -19,7 +19,8 @@
         <activity android:name=".LoginPage" />
         <activity android:name=".MembersPage" />
         <activity android:name=".MembersView" />
-        <activity android:name=".AddReport"></activity>
+        <activity android:name=".AddReport" />
+        <activity android:name=".PsychiatristView"></activity>
     </application>
 
 </manifest>
