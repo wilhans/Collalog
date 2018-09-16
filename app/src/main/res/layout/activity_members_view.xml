@@ -30,13 +30,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/add_report_button"
-        android:layout_marginEnd="102dp"
+        android:layout_marginEnd="70dp"
         android:text="@string/group_members_button" />
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/members_chart"
         android:layout_width="217dp"
         android:layout_height="504dp"
-        android:layout_alignStart="@+id/group_members_button"
-        android:layout_alignTop="@+id/reports_list_view" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/reports_list_view"
+        android:layout_marginEnd="16dp" />
 </RelativeLayout>

@@ -10,10 +10,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 public class AddReport extends AppCompatActivity {
-    private final SeekBar seekBar1 = (SeekBar) findViewById(R.id.seekBar1);
-    private final SeekBar seekBar2 = (SeekBar) findViewById(R.id.seekBar2);
-    private final SeekBar seekBar3 = (SeekBar) findViewById(R.id.seekBar3);
-    final SeekBar seekBar4 = (SeekBar) findViewById(R.id.seekBar4);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +31,10 @@ public class AddReport extends AppCompatActivity {
     }
 
     private void checkSeekbarListener() {
-
+        final SeekBar seekBar1 = (SeekBar) findViewById(R.id.seekBar1);
+        final SeekBar seekBar2 = (SeekBar) findViewById(R.id.seekBar2);
+        final SeekBar seekBar3 = (SeekBar) findViewById(R.id.seekBar3);
+        final SeekBar seekBar4 = (SeekBar) findViewById(R.id.seekBar4);
 
         seekBar1.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override

@@ -1,13 +1,15 @@
 package project.lumohacks.psychologyreport.reportinfo;
 
 public class Question {
-    public int id;
-    public String question;
+    private int id;
+    private String question;
+    private int rate;
 
     // constructs a question with an id and description
-    public Question(Integer id, String question ) {
-    this.id = id;
-    this.question = question;
+    public Question(String question, int rate ) {
+        id++;
+        this.rate = rate;
+        this.question = question;
     }
 
     public void changeID(Integer id) {
@@ -17,5 +19,7 @@ public class Question {
     public String getQuestion() {
         return question;
     }
+
+    public int getRate() { return rate; }
 
 }

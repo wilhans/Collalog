@@ -2,6 +2,7 @@ package project.lumohacks.psychologyreport;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,19 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import project.lumohacks.psychologyreport.reportinfo.Question;
+import project.lumohacks.psychologyreport.reportinfo.Report;
+import project.lumohacks.psychologyreport.reportinfo.ReportTemplate;
 
 public class PsychiatristView extends AppCompatActivity {
 
@@ -21,6 +35,29 @@ public class PsychiatristView extends AppCompatActivity {
         populateListView();
         addListCallback();
         goToMembersButton();
+        populateLineChart();
+    }
+
+    private void populateLineChart() {
+        LineChart chart = (LineChart) findViewById(R.id.psych_chart);
+
+
+        ReportTemplate template = new ReportTemplate(singleton.getGroup(), true);
+        template.addQuestion("test", 3);
+        Report report = new Report(template, 0);
+        List<Entry> entries = new ArrayList<Entry>();
+
+        //Q1 - Q4 need to be separated
+        for(Question current_question : report.getReportTemplate().getQuestions()){
+            entries.add(new Entry(report.getDayFromStarting(),current_question.getRate()));
+        }
+
+        //Havent separate the Q1 - Q4 yet
+        LineDataSet set = new LineDataSet(entries, "Q1");
+        set.setColor(Color.BLUE);
+        LineData lineData = new LineData(set);
+        chart.setData(lineData);
+        chart.invalidate();
     }
 
     private void populateListView() {

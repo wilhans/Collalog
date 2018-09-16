@@ -18,11 +18,11 @@ public class ReportTemplate {
     }
 
     // adds questions to the report in order
-    public void addQuestion(String question) {
-        int questionID = questions.size() + 1;
-        questions.add(new Question(questionID, question));
+    public void addQuestion(String question, int rate) {
+        questions.add(new Question(question, rate));
     }
 
+    // We are not doing this for now.
     // removes question, updates id of remaining questions according to new order
     public void removeQuestion(int questionID) {
         questions.remove(questionID - 1);

@@ -7,7 +7,7 @@
     tools:context=".PsychiatristView">
 
     <com.github.mikephil.charting.charts.LineChart
-        android:id="@+id/members_chart"
+        android:id="@+id/psych_chart"
         android:layout_width="224dp"
         android:layout_height="504dp"
         android:layout_alignParentBottom="true"
@@ -19,7 +19,7 @@
         android:layout_width="140dp"
         android:layout_height="504dp"
         android:layout_alignStart="@+id/members_button"
-        android:layout_alignTop="@+id/members_chart" />
+        android:layout_alignTop="@+id/psych_chart" />
 
     <Button
         android:id="@+id/members_button"

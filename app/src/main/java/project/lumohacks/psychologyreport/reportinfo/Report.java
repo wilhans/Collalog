@@ -27,7 +27,7 @@ public class Report {
      private void loadQuestionsToReport() {
           List<Question> listOfQuestions = reportTemplate.getQuestions();
           for (Question question : listOfQuestions) {
-               answerMap.put(question.id, 0);
+               //answerMap.put(question.id, 0);
           }
      }
 
@@ -49,12 +49,17 @@ public class Report {
      public void printQuestionsAndAnswers() {
           List<Question> listOfQuestions = reportTemplate.getQuestions();
           for(Question q : listOfQuestions) {
-               System.out.printf(q.id + " " + q.getQuestion());
-               System.out.printf(answerMap.get(q.id).toString());
+               //System.out.printf(q.id + " " + q.getQuestion());
+               //System.out.printf(answerMap.get(q.id).toString());
                System.out.println(additionalComment);
           }
      }
 
+     public ReportTemplate getReportTemplate() {
+          return reportTemplate;
+     }
 
-
+     public int getDayFromStarting() {
+          return dayFromStarting;
+     }
 }

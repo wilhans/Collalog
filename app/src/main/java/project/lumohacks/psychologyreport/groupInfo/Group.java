@@ -30,13 +30,13 @@ public class Group {
         groupMembers.add(memberToAdd);
     }
 
-    public MemberType memberExist(String memberName){
+    public boolean memberExist(String memberName){
         for(Member member: groupMembers){
             if(member.getName().equals(memberName)){
-                return member.getMemberType();
+                return true;
             }
         }
-        return null;
+        return false;
     }
 
     public String[] getGroupMember(){
@@ -47,6 +47,15 @@ public class Group {
             }
         }
         return groupList.toArray(new String[groupList.size()]);
+    }
+
+    public MemberType getMemberType(String username){
+        for(Member member: groupMembers){
+            if(member.getName().equals(username)){
+                return member.getMemberType();
+            }
+        }
+        return null;
     }
 
     public void removeMember(String memberName) {

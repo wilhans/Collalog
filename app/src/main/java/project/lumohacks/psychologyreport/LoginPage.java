@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import project.lumohacks.psychologyreport.groupInfo.Group;
 import project.lumohacks.psychologyreport.groupInfo.MemberType;
 
 public class LoginPage extends AppCompatActivity {
@@ -29,10 +30,11 @@ public class LoginPage extends AppCompatActivity {
             public void onClick(View v) {
                 EditText usernameEdit = (EditText) findViewById(R.id.username);
                 String username = usernameEdit.getText().toString();
-                MemberType userType = singleton.getGroup().memberExist(username);
-                if(userType != null) {
+                Group group = singleton.memberExist(username);
+                if(group != null) {
                     singleton.setUserLogin(username);
-                    if(userType == MemberType.HealthProfessional) {
+                    singleton.setGroupLogin(group);
+                    if(group.getMemberType(username) == MemberType.HealthProfessional) {
                         Intent intent = GroupsPage.makeIntent(LoginPage.this);
                         startActivity(intent);
                     } else {

@@ -57,9 +57,7 @@ public class MembersPage extends AppCompatActivity {
                 Group group = singleton.getGroup();
 
                 String memberClicked = textView.getText().toString();
-                System.out.println("" + memberClicked + " : test");
                 group.removeMember(memberClicked);
-                Toast.makeText(MembersPage.this, "Are you sure you want to delete this?", Toast.LENGTH_SHORT).show();
                 initializeMembersList();
             }
         });

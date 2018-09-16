@@ -25,8 +25,11 @@ public class GroupsPage extends AppCompatActivity {
 
     private void populateListView() {
         // Create list of items
-        String[] clients = new String[1];
-        clients[0] = singleton.getGroup().getClientName();
+        int size = singleton.getGroupsSize();
+        String[] clients = new String[size];
+        for(int i = 0; i < size; i++){
+            clients[i] = singleton.getGroup().getClientName();
+        }
 
         // Build Adapter
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
