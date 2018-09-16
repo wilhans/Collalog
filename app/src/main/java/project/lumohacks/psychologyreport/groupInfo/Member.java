@@ -41,4 +41,7 @@ public class Member {
     }
 
 
+    public MemberType getMemberType() {
+        return memberType;
+    }
 }

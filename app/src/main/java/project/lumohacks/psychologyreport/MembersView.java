@@ -7,15 +7,28 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import project.lumohacks.psychologyreport.groupInfo.MemberType;
+
 public class MembersView extends AppCompatActivity {
 
+    Singleton singleton = Singleton.getInstance();
+    String username = singleton.getUserLogin();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_members_view);
 
         addReportsButton();
-        goToMembersButton();
+        setGoToMembersButton();
+    }
+
+    private void setGoToMembersButton(){
+        if(singleton.getGroup().memberExist(username) == MemberType.Associate){
+            Button membersBtn = (Button) findViewById(R.id.group_members_button);
+            membersBtn.setVisibility(View.GONE);
+        } else {
+            goToMembersButton();
+        }
     }
 
     private void addReportsButton() {

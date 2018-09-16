@@ -27,6 +27,16 @@ public class Group {
                           String relationWithClient) {
 
         Member memberToAdd = new Member(memberType, name, email, phoneNumber, relationWithClient);
+        groupMembers.add(memberToAdd);
+    }
+
+    public MemberType memberExist(String memberName){
+        for(Member member: groupMembers){
+            if(member.getName().equals(memberName)){
+                return member.getMemberType();
+            }
+        }
+        return null;
     }
 
     public void removeMember(String memberName) {

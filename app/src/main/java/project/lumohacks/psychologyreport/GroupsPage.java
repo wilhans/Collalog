@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 public class GroupsPage extends AppCompatActivity {
 
+    Singleton singleton = Singleton.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
