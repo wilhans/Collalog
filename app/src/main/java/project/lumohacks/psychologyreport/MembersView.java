@@ -13,6 +13,7 @@ public class MembersView extends AppCompatActivity {
 
     Singleton singleton = Singleton.getInstance();
     String username = singleton.getUserLogin();
+    String password = singleton.getUserPassword();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +24,7 @@ public class MembersView extends AppCompatActivity {
     }
 
     private void setGoToMembersButton(){
-        if(singleton.getGroup().memberExist(username) == MemberType.Associate){
+        if(singleton.getGroup().memberExist(username, password) == MemberType.Associate){
             Button membersBtn = (Button) findViewById(R.id.group_members_button);
             membersBtn.setVisibility(View.GONE);
         } else {
