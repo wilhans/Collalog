@@ -1,5 +1,7 @@
 package project.lumohacks.psychologyreport;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +20,7 @@ public class GroupsPage extends AppCompatActivity {
 
         populateListView();
         registerClickCallback();
+        accessPsychiatristView();
     }
 
     private void populateListView() {
@@ -39,12 +42,18 @@ public class GroupsPage extends AppCompatActivity {
         ListView list = (ListView) findViewById(R.id.clientsListView);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View viewClicked, int position, long id){
-                TextView textView = (TextView) viewClicked;
-                String message = "You clicked #" + position
-                                 + ", which is string: " + textView.getText().toString();
-                Toast.makeText(GroupsPage.this, message, Toast.LENGTH_LONG).show();
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = PsychiatristView.makeIntent(GroupsPage.this);
+                startActivity(intent);
             }
         });
+    }
+
+    private void accessPsychiatristView() {
+
+    }
+
+    public static Intent makeIntent(Context context) {
+        return new Intent(context, GroupsPage.class);
     }
 }
