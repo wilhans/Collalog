@@ -23,7 +23,7 @@ public class LoginPage extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+
                 Intent intent = MembersView.makeIntent(LoginPage.this);
                 startActivity(intent);
             }
