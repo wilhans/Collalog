@@ -2,15 +2,16 @@ package project.lumohacks.psychologyreport.reportinfo;
 
 import java.util.ArrayList;
 import java.util.List;
+import project.lumohacks.psychologyreport.groupInfo.Group;
 
 public class ReportTemplate {
-
     public int id;
     public List<Question> questions;
 
-    // creates new report template with no questions
-    public ReportTemplate() {
+    // creates new report template with no questions, id is same as associated group's id
+    public ReportTemplate(Group associatedGroup) {
         questions = new ArrayList<>();
+        id = associatedGroup.getGroupID();
     }
 
     // adds questions to the report in order
@@ -25,5 +26,10 @@ public class ReportTemplate {
         for (int i = questionID - 1; i < questions.size(); i++) {
             questions.get(i).changeID(i +1);
         }
+    }
+
+    // returns the list of questions
+    public List<Question> getQuestions() {
+        return questions;
     }
 }
