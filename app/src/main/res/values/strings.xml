@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">PsychologyReport</string>
+    <string name="app_name">collalog</string>
     <string name="title_activity_login_page">LoginPage</string>
-    <string name="app_title">Psych Go</string>
+    <string name="app_title">collalog</string>
     <string name="add_members">Add Members</string>
     <string name="go_to_login_page_text">Go to Login Page</string>
     <string name="password_edit">Password</string>
