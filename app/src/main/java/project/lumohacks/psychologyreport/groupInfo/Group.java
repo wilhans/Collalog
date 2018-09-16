@@ -24,15 +24,15 @@ public class Group {
     }
 
     public void addMember(MemberType memberType, String name, String email, int phoneNumber,
-                          String relationWithClient) {
+                          String relationWithClient, String password) {
 
-        Member memberToAdd = new Member(memberType, name, email, phoneNumber, relationWithClient);
+        Member memberToAdd = new Member(memberType, name, email, phoneNumber, relationWithClient, password);
         groupMembers.add(memberToAdd);
     }
 
-    public boolean memberExist(String memberName){
+    public boolean memberExist(String memberName, String password){
         for(Member member: groupMembers){
-            if(member.getName().equals(memberName)){
+            if(member.getName().equals(memberName) && member.getPassword().equals(password)){
                 return true;
             }
         }

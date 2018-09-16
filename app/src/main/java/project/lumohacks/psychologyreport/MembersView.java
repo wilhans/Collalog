@@ -25,6 +25,7 @@ public class MembersView extends AppCompatActivity {
 
     Singleton singleton = Singleton.getInstance();
     String username = singleton.getUserLogin();
+    String password = singleton.getUserPassword();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

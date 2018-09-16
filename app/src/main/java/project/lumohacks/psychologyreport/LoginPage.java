@@ -25,14 +25,19 @@ public class LoginPage extends AppCompatActivity {
 
     private void loginButton() {
         Button loginBtn = (Button) findViewById(R.id.login_button);
+
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 EditText usernameEdit = (EditText) findViewById(R.id.username);
+                EditText passwordEdit = (EditText) findViewById(R.id.password);
                 String username = usernameEdit.getText().toString();
-                Group group = singleton.memberExist(username);
+                String password = passwordEdit.getText().toString();
+
+                Group group = singleton.memberExist(username, password);
                 if(group != null) {
                     singleton.setUserLogin(username);
+                    singleton.setUserPassword(password);
                     singleton.setGroupLogin(group);
                     if(group.getMemberType(username) == MemberType.HealthProfessional) {
                         Intent intent = GroupsPage.makeIntent(LoginPage.this);
@@ -41,7 +46,7 @@ public class LoginPage extends AppCompatActivity {
                         Intent intent = MembersView.makeIntent(LoginPage.this);
                         startActivity(intent);
                     }
-                }
+                } else Toast.makeText(LoginPage.this,"Username/password does not exist. Try again or make an account.", Toast.LENGTH_SHORT).show();
             }
         });
     }
