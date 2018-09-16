@@ -44,7 +44,7 @@ public class LoginPage extends AppCompatActivity {
                         Intent intent = MembersView.makeIntent(LoginPage.this);
                         startActivity(intent);
                     }
-                }
+                } else Toast.makeText(LoginPage.this,"Username/password does not exist. Try again or make an account.", Toast.LENGTH_SHORT).show();
             }
         });
     }
