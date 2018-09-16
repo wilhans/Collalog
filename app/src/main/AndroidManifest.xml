@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginPage" />
-        <activity android:name=".MembersPage"></activity>
+        <activity android:name=".MembersPage" />
+        <activity android:name=".MembersView"></activity>
     </application>
 
 </manifest>

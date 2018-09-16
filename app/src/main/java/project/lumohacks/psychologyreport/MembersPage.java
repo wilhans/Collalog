@@ -4,10 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class MembersPage extends AppCompatActivity {
+    private String[] members = {"John", "Jane", "Peter"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,10 +19,20 @@ public class MembersPage extends AppCompatActivity {
         setContentView(R.layout.activity_members_page);
 
         initializeMembersList();
+        addMembersButton();
+    }
+
+    private void addMembersButton() {
+        Button loginBtn = (Button) findViewById(R.id.add_members_button);
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MembersPage.this, "TestButton", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void initializeMembersList() {
-        String[] members = {"John", "Jane", "Peter"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
                 R.layout.members_list,
