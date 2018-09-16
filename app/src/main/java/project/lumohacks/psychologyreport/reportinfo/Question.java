@@ -14,4 +14,8 @@ public class Question {
         this.id = id;
     }
 
+    public String getQuestion() {
+        return question;
+    }
+
 }
