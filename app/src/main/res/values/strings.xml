@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">PsychologyReport</string>
+    <string name="title_activity_login_page">LoginPage</string>
+    <string name="app_title">Psych Go</string>
+    <string name="add_members">Add Members</string>
+    <string name="go_to_login_page_text">Go to Login Page</string>
+    <string name="password_edit">Password</string>
+    <string name="username_edit">Username</string>
+    <string name="login_button">Login</string>
+    <string name="add_report_button">Add Report</string>
+    <string name="group_members_button">Group Members</string>
+    <string name="default_slider">0/5</string>
+    <string name="submit_button">Submit</string>
 </resources>

@@ -16,6 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".GroupsPage"/>
+        <activity android:name=".LoginPage" />
+        <activity android:name=".MembersPage" />
+        <activity android:name=".MembersView" />
+        <activity android:name=".AddReport" />
+        <activity android:name=".PsychiatristView"></activity>
     </application>
 
 </manifest>
