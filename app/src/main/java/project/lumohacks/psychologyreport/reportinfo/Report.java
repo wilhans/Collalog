@@ -9,11 +9,9 @@ import java.util.Map;
 public class Report {
 
      public ReportTemplate reportTemplate;
-     public
      public Map<Integer, Integer> keyToAnswerMap;
 
      // constructs a report with questions from the report template
-    public Report()
 
 
 }
