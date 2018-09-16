@@ -29,6 +29,15 @@ public class Group {
         Member memberToAdd = new Member(memberType, name, email, phoneNumber, relationWithClient);
     }
 
+    public boolean memberExist(String memberName){
+        for(Member member: groupMembers){
+            if(member.getName().equals(memberName)){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void removeMember(String memberName) {
 
         Iterator<Member> m = groupMembers.iterator();
