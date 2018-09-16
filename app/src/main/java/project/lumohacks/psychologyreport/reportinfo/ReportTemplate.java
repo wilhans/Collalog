@@ -7,9 +7,12 @@ import project.lumohacks.psychologyreport.groupInfo.Group;
 public class ReportTemplate {
     public int id;
     public List<Question> questions;
+    public boolean allowsAdditionalComment = true;
 
     // creates new report template with no questions, id is same as associated group's id
-    public ReportTemplate(Group associatedGroup) {
+    // specifies if additional comment is allowed
+    public ReportTemplate(Group associatedGroup, boolean allowsAdditionalComment) {
+        this.allowsAdditionalComment = allowsAdditionalComment;
         questions = new ArrayList<>();
         id = associatedGroup.getGroupID();
     }
@@ -20,7 +23,7 @@ public class ReportTemplate {
         questions.add(new Question(questionID, question));
     }
 
-    //removes question, updates id of remaining questions according to new order
+    // removes question, updates id of remaining questions according to new order
     public void removeQuestion(int questionID) {
         questions.remove(questionID - 1);
         for (int i = questionID - 1; i < questions.size(); i++) {
@@ -28,8 +31,10 @@ public class ReportTemplate {
         }
     }
 
+
     // returns the list of questions
     public List<Question> getQuestions() {
         return questions;
     }
+
 }
