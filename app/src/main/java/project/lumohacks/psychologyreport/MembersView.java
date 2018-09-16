@@ -14,7 +14,19 @@ public class MembersView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_members_view);
 
+        addReportsButton();
         goToMembersButton();
+    }
+
+    private void addReportsButton() {
+        Button addReportsBtn = (Button) findViewById(R.id.add_report_button);
+        addReportsBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = AddReport.makeIntent(MembersView.this);
+                startActivity(intent);
+            }
+        });
     }
 
     private void goToMembersButton() {
