@@ -6,12 +6,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-// still working on this
 public class Report {
 
      public ReportTemplate reportTemplate;
      public Map<Integer, Integer> answerMap;
      public int dayFromStarting;
+     public String additionalComment;
 
 
      // constructs a report with questions from the report template
@@ -36,14 +36,25 @@ public class Report {
           answerMap.put(questionID, answer);
      }
 
+
+     public String getAdditionalComment() {
+          return additionalComment;
+     }
+
+     public Map<Integer, Integer> getAnswerMap() {
+          return answerMap;
+     }
+
      // prints each question followed by its answer
      public void printQuestionsAndAnswers() {
           List<Question> listOfQuestions = reportTemplate.getQuestions();
           for(Question q : listOfQuestions) {
                System.out.printf(q.id + " " + q.getQuestion());
                System.out.printf(answerMap.get(q.id).toString());
+               System.out.println(additionalComment);
           }
      }
+
 
 
 }
