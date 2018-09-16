@@ -12,14 +12,16 @@ public class Member {
     private String email;
     private int phoneNumber;
     private String relationWithClient;
+    private String password;
 
     public Member(MemberType memberType, String name, String email, int phoneNumber,
-                       String relationWithClient) {
+                       String relationWithClient, String password) {
         this.memberType = memberType;
         this.name = name;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.relationWithClient = relationWithClient;
+        this.password = password;
     }
 
     // make a
@@ -38,6 +40,10 @@ public class Member {
 
     public String getMemberRelationWithClient() {
         return relationWithClient;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
 

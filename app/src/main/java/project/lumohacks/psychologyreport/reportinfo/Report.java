@@ -20,6 +20,7 @@ public class Report {
           answerMap = new HashMap<>();
           this.dayFromStarting = dayFromStarting;
           loadQuestionsToReport();
+          additionalComment = "";
 
      }
 
@@ -36,9 +37,14 @@ public class Report {
           answerMap.put(questionID, answer);
      }
 
+     public void setAdditionalComment(String comment) {
+          additionalComment = comment;
+     }
+
 
      public String getAdditionalComment() {
           return additionalComment;
+
      }
 
      public Map<Integer, Integer> getAnswerMap() {
