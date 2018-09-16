@@ -27,15 +27,16 @@ public class Group {
                           String relationWithClient) {
 
         Member memberToAdd = new Member(memberType, name, email, phoneNumber, relationWithClient);
+        groupMembers.add(memberToAdd);
     }
 
-    public boolean memberExist(String memberName){
+    public MemberType memberExist(String memberName){
         for(Member member: groupMembers){
             if(member.getName().equals(memberName)){
-                return true;
+                return member.getMemberType();
             }
         }
-        return false;
+        return null;
     }
 
     public void removeMember(String memberName) {
