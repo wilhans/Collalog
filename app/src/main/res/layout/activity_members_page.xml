@@ -25,4 +25,13 @@
         android:layout_marginStart="29dp"
         android:layout_marginTop="13dp" />
 
+    <TextView
+        android:id="@+id/delete_member_text"
+        android:layout_width="192dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/members_list_view"
+        android:layout_alignTop="@+id/add_members_button"
+        android:layout_marginTop="29dp"
+        android:text="@string/delete_member_text" />
+
 </RelativeLayout>

@@ -11,4 +11,12 @@
     <string name="group_members_button">Group Members</string>
     <string name="default_slider">0/5</string>
     <string name="submit_button">Submit</string>
+    <string name="description_edit_text">Put your description here..</string>
+    <string name="delete_member_text">Click once to delete member</string>
+    <string name="description_text">Description</string>
+    <string name="question1_text">The client exhibited trembling/shaking in the hands</string>
+    <string name="question2_text">The patient seemed to be in an irritable mood</string>
+    <string name="question3_text">The patient was distracted during conversation</string>
+    <string name="question4_text">The patient exhibited risky behaviour</string>
+    <string name="report_text">Add a new report:</string>
 </resources>

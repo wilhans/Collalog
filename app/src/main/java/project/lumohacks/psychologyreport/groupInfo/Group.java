@@ -39,6 +39,16 @@ public class Group {
         return null;
     }
 
+    public String[] getGroupMember(){
+        List<String> groupList = new ArrayList<>();
+        for(Member member : groupMembers){
+            if(member.getMemberType() != MemberType.HealthProfessional){
+                groupList.add(member.getName());
+            }
+        }
+        return groupList.toArray(new String[groupList.size()]);
+    }
+
     public void removeMember(String memberName) {
 
         Iterator<Member> m = groupMembers.iterator();

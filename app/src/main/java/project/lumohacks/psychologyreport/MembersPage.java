@@ -5,14 +5,18 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class MembersPage extends AppCompatActivity {
-    private String[] members = {"John", "Jane", "Peter"};
+import project.lumohacks.psychologyreport.groupInfo.Group;
 
+public class MembersPage extends AppCompatActivity {
+
+    Singleton singleton = Singleton.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +24,7 @@ public class MembersPage extends AppCompatActivity {
 
         initializeMembersList();
         addMembersButton();
+        addListCallback();
     }
 
     private void addMembersButton() {
@@ -33,6 +38,7 @@ public class MembersPage extends AppCompatActivity {
     }
 
     private void initializeMembersList() {
+        String[] members = singleton.getGroup().getGroupMember();
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
                 R.layout.members_list,
@@ -40,6 +46,23 @@ public class MembersPage extends AppCompatActivity {
         );
         ListView list = (ListView) findViewById(R.id.members_list_view);
         list.setAdapter(adapter);
+    }
+
+    private void addListCallback() {
+        ListView list = (ListView) findViewById(R.id.members_list_view);
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                TextView textView = (TextView) view;
+                Group group = singleton.getGroup();
+
+                String memberClicked = textView.getText().toString();
+                System.out.println("" + memberClicked + " : test");
+                group.removeMember(memberClicked);
+                Toast.makeText(MembersPage.this, "Are you sure you want to delete this?", Toast.LENGTH_SHORT).show();
+                initializeMembersList();
+            }
+        });
     }
 
     public static Intent makeIntent(Context context) {

@@ -20,13 +20,13 @@ public class GroupsPage extends AppCompatActivity {
         setContentView(R.layout.activity_groups_page);
 
         populateListView();
-        registerClickCallback();
         accessPsychiatristView();
     }
 
     private void populateListView() {
         // Create list of items
-        String[] clients = {"7", "5", "6", "1"};
+        String[] clients = new String[1];
+        clients[0] = singleton.getGroup().getClientName();
 
         // Build Adapter
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
@@ -39,7 +39,7 @@ public class GroupsPage extends AppCompatActivity {
         list.setAdapter(adapter);
     }
 
-    private void registerClickCallback() {
+    private void accessPsychiatristView() {
         ListView list = (ListView) findViewById(R.id.clientsListView);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -48,10 +48,6 @@ public class GroupsPage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
-
-    private void accessPsychiatristView() {
-
     }
 
     public static Intent makeIntent(Context context) {
